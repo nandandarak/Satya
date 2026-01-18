@@ -1,0 +1,222 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-theme), border-color var(--transition-theme);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  transition: transform var(--transition-fast), color var(--transition-theme);
+}
+
+[data-theme="dark"] .nav-logo {
+  color: var(--color-off-white);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  color: var(--color-professional-blue);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+[data-theme="dark"] .nav-logo:hover {
+  color: var(--color-cyan-blue-light);
+}
+
+.logo-text {
+  letter-spacing: 0.05em;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Hamburger Button */
+.hamburger {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  background: transparent;
+  border-color: transparent;
+}
+
+.hamburger:active {
+  transform: scale(0.95);
+}
+
+.hamburger span {
+  display: block;
+  height: 2.5px;
+  width: 24px;
+  background: var(--color-navy);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  position: relative;
+}
+
+[data-theme="dark"] .hamburger span {
+  background: var(--color-steel-blue);
+}
+
+.hamburger.active {
+  background: transparent;
+  border-color: transparent;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  width: 24px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  width: 24px;
+}
+
+.hamburger:hover span {
+  background: var(--color-professional-blue);
+}
+
+.hamburger.active:hover span {
+  background: var(--color-professional-blue);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 450px;
+  height: 100vh;
+  background: var(--color-bg-secondary);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  transition: background-color var(--transition-theme);
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.menu-link {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.menu-link-text {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-link:hover .menu-link-text,
+.menu-link.active .menu-link-text {
+  color: var(--color-professional-blue);
+}
+
+.menu-link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-professional-blue);
+  transform-origin: left;
+}
+
+.menu-theme-toggle {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .menu {
+    max-width: 500px;
+  }
+}

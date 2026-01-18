@@ -1,0 +1,290 @@
+.partners {
+  background: transparent !important;
+  /* Allow unified background to show */
+  transition: background-color var(--transition-theme);
+}
+
+.partners-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Marquee Styles */
+.partners-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent);
+  padding: var(--spacing-md) 0;
+}
+
+.partners-marquee-track {
+  display: flex;
+  gap: 2rem;
+  /* Reduced to 32px */
+  width: max-content;
+  padding: var(--spacing-sm);
+  animation: marquee 20s linear infinite;
+  /* Increased speed */
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  /* Hardware acceleration */
+}
+
+.partners-marquee-track:hover,
+.partners-marquee-track:active {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+
+.partner-card {
+  background: rgba(15, 23, 42, 0.6);
+  /* Darker background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Subtle border */
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  flex: 0 0 auto;
+  min-width: 200px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-card:hover {
+  box-shadow: 0 0 30px rgba(58, 90, 138, 0.4);
+  border-color: var(--color-professional-blue);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-5px);
+}
+
+[data-theme="dark"] .partner-card {
+  background: rgba(5, 5, 5, 0.6);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .partner-card:hover {
+  background: rgba(5, 5, 5, 0.8);
+}
+
+.partner-logo {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  transition: transform var(--transition-base);
+}
+
+.partner-name {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  /* Ensure text is visible, might need adjustment if background is very dark */
+  font-weight: 500;
+  transition: color var(--transition-theme);
+}
+
+/* Ensure text is light on dark card */
+.partner-name {
+  color: #e2e8f0;
+}
+
+
+/* Centered Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  pointer-events: none;
+}
+
+.modal {
+  background: var(--color-bg-secondary);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  transition: background-color var(--transition-theme);
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 1;
+  border: 1px solid var(--color-border);
+}
+
+.modal-close:hover {
+  background: var(--color-professional-blue);
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+  border-color: var(--color-professional-blue);
+  box-shadow: 0 4px 12px rgba(58, 90, 138, 0.4);
+}
+
+[data-theme="dark"] .modal-close:hover {
+  background: var(--color-professional-blue-light);
+  box-shadow: 0 4px 16px rgba(90, 138, 154, 0.5);
+}
+
+.modal-close:hover {
+  background: var(--color-professional-blue);
+  color: white;
+  transform: rotate(90deg);
+  border-color: var(--color-professional-blue);
+}
+
+.modal-content {
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.modal-logo {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+  transition: color var(--transition-theme);
+}
+
+[data-theme="dark"] .modal-title {
+  color: var(--color-steel-blue);
+}
+
+.modal-project {
+  font-size: 1.25rem;
+  color: var(--color-professional-blue);
+  margin-bottom: var(--spacing-md);
+  font-weight: 500;
+}
+
+.modal-description {
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+  transition: color var(--transition-theme);
+}
+
+.modal-impact {
+  padding: var(--spacing-md);
+  background: var(--color-bg);
+  border-radius: 12px;
+  color: var(--color-text);
+  text-align: left;
+  border-left: 4px solid var(--color-professional-blue);
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+.modal-impact strong {
+  color: var(--color-professional-blue);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+@media (max-width: 768px) {
+  .partners-grid {
+    gap: var(--spacing-md);
+  }
+
+  .partner-card {
+    padding: var(--spacing-sm);
+    min-width: 140px;
+    /* Reduced specific size for mobile */
+    max-width: 160px;
+    flex: 0 0 auto;
+    /* Ensure no shrinking/growing */
+  }
+
+  /* Specific Mobile Marquee Adjustments */
+  .partners-marquee-track {
+    gap: 1rem;
+    /* Reduced to 16px */
+    /* Reduced gap */
+  }
+
+  .partners-marquee-wrapper {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    /* Slightly tighter transparency on smaller screens */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  .partner-logo {
+    font-size: 2.5rem;
+  }
+
+  .modal {
+    max-width: 100%;
+    margin: var(--spacing-sm);
+  }
+
+  .modal-content {
+    padding: var(--spacing-md);
+  }
+}

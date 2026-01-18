@@ -1,0 +1,16 @@
+.projects-page {
+  background: var(--color-bg);
+  transition: background-color var(--transition-theme);
+}
+
+.projects-hero {
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+  text-align: center;
+  padding: var(--spacing-2xl) 0;
+  transition: background var(--transition-theme);
+}
+
+.projects-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}

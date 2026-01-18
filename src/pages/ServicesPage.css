@@ -1,0 +1,356 @@
+/* ============================================
+   SERVICES PAGE LAYOUT (Dedicated - Progressive Reveal)
+   ============================================ */
+
+.services-page {
+  position: relative;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   AMBIENT BACKGROUND
+   ============================================ */
+
+.page-ambient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-math-symbol {
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--color-text-muted);
+  opacity: 0.04;
+  user-select: none;
+  filter: blur(0.5px);
+}
+
+.pm1 {
+  top: 15%;
+  right: 10%;
+  font-size: 4rem;
+}
+
+.pm2 {
+  top: 45%;
+  left: 5%;
+  font-size: 3rem;
+}
+
+.pm3 {
+  top: 75%;
+  right: 15%;
+  font-size: 2rem;
+  font-family: monospace;
+  font-style: normal;
+}
+
+.pm4 {
+  bottom: 20%;
+  left: 20%;
+  font-size: 2.5rem;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.services-hero {
+  position: relative;
+  padding: 120px 0 60px;
+  background: transparent;
+  z-index: 2;
+  text-align: left;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.page-subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   DETAILED GRID LAYOUT
+   ============================================ */
+
+.detailed-services-section {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--spacing-2xl);
+}
+
+.detailed-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 Columns on Desktop */
+  gap: var(--spacing-lg);
+  /* Reduced gap */
+  width: 100%;
+}
+
+/* ============================================
+   SERVICE CONTENT PANELS (Interactive Object)
+   ============================================ */
+
+.detailed-service-panel {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  /* Indicates interaction */
+}
+
+.service-panel-media {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* Reduced height for better viewport fit */
+  border-radius: 16px;
+  /* Increased radius for modern feel */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  /* Minimal shadow at rest */
+  background: #000;
+  transition: box-shadow 0.4s ease;
+}
+
+.detailed-service-panel:hover .service-panel-media {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-panel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: none !important;
+  /* STRICTLY NO FILTERS */
+  opacity: 0.9;
+  /* Slight dim just for base contrast, or 1 if video is dark enough */
+}
+
+/* Very subtle scale on hover */
+.detailed-service-panel:hover .service-panel-video {
+  transform: scale(1.03);
+}
+
+/* ============================================
+   GRADIENT WASH (Atmospheric Text Layer)
+   ============================================ */
+
+.service-panel-wash {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  /* Covers bottom portion only */
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 30%,
+      rgba(0, 0, 0, 0.85) 80%,
+      rgba(0, 0, 0, 0.95) 100%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+  opacity: 0.9;
+  /* Stronger base opacity for legibility */
+  pointer-events: none;
+  /* Let clicks pass through */
+}
+
+.detailed-service-panel:hover .service-panel-wash {
+  opacity: 1;
+  /* Slightly expand gradient up on hover for more text room */
+  height: 85%;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 30%,
+      rgba(0, 0, 0, 0.9) 80%,
+      rgba(0, 0, 0, 1) 100%);
+  transition: all 0.5s ease;
+}
+
+/* ============================================
+   INTERACTIVE CONTENT LAYER
+   ============================================ */
+
+.service-explore-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-xl);
+  z-index: 2;
+  color: white;
+  /* Always white on video */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Layer 1: Title Group (The Anchor) */
+.explore-header-group {
+  margin-bottom: var(--spacing-md);
+  transform-origin: left bottom;
+  /* Text shadow for extra pop against video */
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+.context-label {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.85);
+  /* Increased contrast */
+  margin-bottom: 8px;
+  font-weight: 700;
+  /* Bolder */
+}
+
+.explore-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  /* Pure white */
+  margin: 0;
+  line-height: 1.1;
+}
+
+.explore-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-professional-blue);
+  margin-top: 16px;
+  opacity: 1;
+  /* Solid visual anchor */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Layer 2: Description (The Insight) */
+.explore-body-container {
+  overflow: hidden;
+}
+
+.explore-description {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  /* High legibility */
+  margin-bottom: var(--spacing-lg);
+  max-width: 95%;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  /* Shadow for readability */
+}
+
+/* Layer 3: Features (The Detail) */
+.explore-features {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  /* Clearer separator */
+  padding-top: var(--spacing-md);
+}
+
+.features-labels-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.feature-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* Small caps feel */
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.4);
+  /* Darker backing for legibility */
+  padding: 4px 10px;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.detailed-service-panel:hover .feature-label {
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-title {
+  color: var(--color-navy);
+}
+
+.cta-text {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+[data-theme="dark"] .page-title,
+[data-theme="dark"] .cta-title {
+  color: var(--color-off-white);
+}
+
+[data-theme="dark"] .service-panel-media {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Stronger shadow in dark mode */
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .detailed-services-grid {
+    grid-template-columns: 1fr;
+    /* Single column on tablet/mobile */
+    gap: var(--spacing-lg);
+  }
+
+  .service-panel-media {
+    height: 450px;
+  }
+
+  /* On mobile/touch, we might want to show some context continuously or on tap */
+  .explore-description,
+  .explore-features {
+    opacity: 0.8 !important;
+    /* Force visible on mobile if needed, or rely on active state */
+    /* Often better to let tap trigger the hover state behavior naturally on touch devices */
+  }
+}
