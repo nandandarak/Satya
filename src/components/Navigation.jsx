@@ -23,6 +23,7 @@ const Navigation = () => {
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
     { path: '/partners', label: 'Partners & Clients' },
+    { path: '/careers', label: 'Careers' },
   ]
 
   const toggleMenu = () => {
