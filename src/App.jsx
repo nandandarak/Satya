@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import Partners from './pages/Partners'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
+import Careers from './pages/Careers'
 import Layout from './components/Layout'
 import PageTransition from './components/PageTransition'
 
@@ -61,6 +62,14 @@ function AppRoutes() {
           element={
             <PageTransition>
               <Team />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/careers"
+          element={
+            <PageTransition>
+              <Careers />
             </PageTransition>
           }
         />

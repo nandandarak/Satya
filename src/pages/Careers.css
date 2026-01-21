@@ -1,0 +1,268 @@
+.careers-page {
+    background: var(--color-bg);
+    transition: background-color var(--transition-theme);
+}
+
+.careers-hero {
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    transition: background var(--transition-theme);
+}
+
+.careers-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--color-navy);
+    margin-bottom: var(--spacing-sm);
+    transition: color var(--transition-theme);
+}
+
+[data-theme="dark"] .page-title {
+    color: var(--color-steel-blue);
+}
+
+.page-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    transition: color var(--transition-theme);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.careers-content {
+    padding: var(--spacing-xl) 0;
+}
+
+@media (min-width: 1024px) {
+    .careers-content {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: var(--spacing-2xl);
+        align-items: start;
+    }
+
+    .jobs-section {
+        order: 2;
+        margin-bottom: 0;
+    }
+
+    .application-section {
+        order: 1;
+        max-width: none;
+        margin: 0;
+        position: sticky;
+        top: 2rem;
+    }
+}
+
+/* Job Openings Section */
+.jobs-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-navy);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    font-weight: 600;
+    transition: color var(--transition-theme);
+}
+
+[data-theme="dark"] .section-title {
+    color: var(--color-steel-blue);
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.job-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-professional-blue);
+}
+
+.job-title {
+    font-size: 1.25rem;
+    color: var(--color-navy);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+[data-theme="dark"] .job-title {
+    color: var(--color-steel-blue);
+}
+
+.job-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(58, 90, 138, 0.1);
+    color: var(--color-professional-blue);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.job-description {
+    color: var(--color-text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Application Form Section */
+.application-section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-container {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    padding: var(--spacing-xl);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
+}
+
+.careers-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-file-input {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-professional-blue);
+    box-shadow: 0 0 0 3px rgba(58, 90, 138, 0.1);
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+}
+
+.form-file-input {
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+.form-file-input::file-selector-button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.form-file-input::file-selector-button:hover {
+    background: var(--color-border);
+}
+
+.form-submit {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--color-professional-blue);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.form-submit:hover:not(:disabled) {
+    background: var(--color-professional-blue-dark);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .form-submit:hover:not(:disabled) {
+    background: var(--color-professional-blue-light);
+}
+
+.form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-success {
+    padding: var(--spacing-sm);
+    background: rgba(58, 90, 138, 0.1);
+    border: 1px solid var(--color-professional-blue);
+    border-radius: 12px;
+    color: var(--color-professional-blue);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .careers-hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .form-container {
+        padding: var(--spacing-md);
+    }
+}
