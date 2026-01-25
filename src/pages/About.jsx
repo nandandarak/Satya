@@ -46,12 +46,12 @@ const About = () => {
           >
             <h1 className="about-title">ABOUT SATYAH</h1>
             <h2 className="about-acronym">
-              Scientific Analytical Tools From Young Academics Of Hindustan
+              Scientific Analytical Tools from Young Academics of Hindustan (SATYAH (सत्य:)) Research & Consultancy
             </h2>
             <p className="about-mission-intro">
-              We are a research-driven consulting organization dedicated to empowering institutions,
-              businesses, and policymakers with the insights they need to navigate complex
-              challenges and drive sustainable growth.
+              A Pune-based research and consultancy firm established in 2019 and registered as an MSME in 2022.
+              Founded by Ms. Abhilasha Suryavanshi, SATYAH bridges academia and industry through evidence-based
+              research solutions.
             </p>
           </motion.div>
         </div>
@@ -69,22 +69,22 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="narrative-block">
-              <h3 className="narrative-subtitle">Our Methodology</h3>
+              <h3 className="narrative-subtitle">Our Impact</h3>
               <p>
-                At SATYAH, we believe that the most impactful decisions are grounded in
-                rigorous research and comprehensive data analysis. We move beyond intuition,
-                employing systematic methodologies to uncover evidence-based insights that
-                serve as the foundation for strategic foresight.
+                With over 20 completed projects, SATYAH has become a trusted partner for
+                institutions, government agencies, NGOs, and private organizations. Our
+                multidisciplinary team delivers comprehensive research support, data analytics, and
+                strategic consulting tailored to each client's needs.
               </p>
             </div>
 
             <div className="narrative-block">
-              <h3 className="narrative-subtitle">Bridging Academia & Industry</h3>
+              <h3 className="narrative-subtitle">Our Philosophy</h3>
               <p>
-                We combine academic rigor with practical expertise to bridge the gap between
-                theoretical research and real-world implementation. Our multidisciplinary team
-                brings together researchers, analysts, and domain experts to transform complex
-                challenges into clear opportunities for innovation.
+                Guided by our tagline "Survey Bhavantu Sukhinah" (Survey for the happiness of
+                all), we believe in survey-driven insights and direct engagement to empower
+                researchers and organizations in making meaningful contributions to science,
+                technology, and societal development.
               </p>
             </div>
           </motion.div>
