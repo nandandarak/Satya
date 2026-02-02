@@ -17,7 +17,7 @@ const teamMembers = [
         image: '👩‍💼',
     },
     {
-        name: 'Adv. Rushikesh Bade',
+        name: 'Adv. Hrishikesh Bade',
         role: 'Legal Advisor',
         description: 'Legal Officer.',
         image: '👨‍⚖️',
@@ -32,7 +32,7 @@ const teamMembers = [
     {
         name: 'Dr. Nilesh Padwal',
         role: 'Project Co-ordinator',
-        description: 'PhD in Environmental Economics.',
+        description: 'PhD in Economics.',
         image: '👨‍🔬',
     },
     {
@@ -42,7 +42,7 @@ const teamMembers = [
         image: '👨‍💻',
     },
     {
-        name: 'Dr. Anirudh More',
+        name: 'Dr. Anirudha More',
         role: 'Agricultural Economist',
         description: 'PhD in Economics.',
         image: '👨‍🌾',
